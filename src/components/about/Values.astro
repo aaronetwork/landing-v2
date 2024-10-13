@@ -1,0 +1,73 @@
+---
+const values = [
+  [
+    {
+      ref: '01',
+      name: 'Empowering Users through Decentralization',
+      description:
+        'At Aaron Network, we believe in empowering users by providing them with full control over' +
+        ' their communications. Our decentralized approach means that no single entity governs your' +
+        ' data or interactions. This gives you the freedom to communicate without censorship or ' +
+        'surveillance, fostering an open and inclusive environment. By joining Aaron Network, ' +
+        'you become part of a community that values privacy, security, and transparency, ' +
+        'making your voice heard in a truly decentralized world.',
+    },
+    {
+      ref: '02',
+      name: 'A decentralized platform for free and secure communication.',
+      description:
+        'Aaron Network is an innovative crypto project inspired by the legacy of Aaron Swartz. ' +
+        'Our goal is to create a decentralized platform for communication, offering secure ' +
+        'public and private messaging channels with complete data protection. With our ' +
+        'address scoring system, users can evaluate the reputation of their contacts, ' +
+        'minimizing the risks of interacting with malicious actors.',
+    },
+  ],
+  [
+    {
+      ref: '03',
+      name: 'Transparency through blockchain',
+      description:
+        ' One of our key tools is address scoring. This blockchain-based solution helps users ' +
+        'assess the reliability of those they interact with. You’ll be able to better' +
+        ' understand who is on the other end of your communication, making interactions ' +
+        'on Aaron Network safer and more trustworthy..',
+    },
+    {
+      ref: '04',
+      name: 'A secure environment for communication',
+      description:
+        ' Your data security is our top priority. Aaron Network uses advanced encryption ' +
+        'technologies to ensure that your messages remain strictly yours. By eliminating ' +
+        'centralized servers, we guarantee the utmost confidentiality in your communication.',
+    },
+  ],
+];
+---
+
+<section class="py-16 sm:py-20">
+  <div class="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+    <div class="flex flex-col gap-8 lg:gap-12">
+      <h2 class="text-3xl font-medium tracking-tight sm:text-4xl">Our Values</h2>
+      <div class="grid gap-8 lg:grid-cols-2">
+        {
+          values.map((column, index) => (
+            <div class:list={['space-y-8', index === 1 && 'lg:mt-16']}>
+              {column.map((value) => (
+                <div class="bg-primary-500/10 dark:bg-primary-400/10 flex flex-col gap-12 rounded-3xl px-6 py-8">
+                  <p class="text-sm">{value.ref}</p>
+                  <div class="flex flex-col gap-4">
+                    <h3 class="text-xl font-medium">{value.name}</h3>
+                    <p class="text-primary-950/70 dark:text-primary-200/70 text-base sm:text-lg">
+                      {value.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>
