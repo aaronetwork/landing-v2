@@ -1,0 +1,53 @@
+---
+const updates = [
+  { date: "October 2024", content: "Developed the address reputation scoring functionality and @CosmosReputationBot (Telegram Bot). Also launched a new version of the site. Launched a blog\n", link: [{ name: "What is Cosmos address reputation from Aaron Network?", href: "https://blog.aaronetwork.xyz/blog/03-address-reputation-scoring/", isExternal: true}, { name: "https://t.me/CosmosReputationBot", href: "https://t.me/CosmosReputationBot", isExternal: true}, { name: "https://blog.aaronetwork.xyz/", href: "https://blog.aaronetwork.xyz/", isExternal: true}] },
+  { date: "September 2024", content: "Developed the Network Explorer and Network Dashboard", link: [{ name: "https://github.com/aaronetwork/explorer", href: "https://github.com/aaronetwork/explorer", isExternal: true}, { name: "https://github.com/aaronetwork/dashboard-api", href: "https://github.com/aaronetwork/dashboard-api", isExternal: true}, { name: "https://github.com/aaronetwork/dashboard-frontend", href: "https://github.com/aaronetwork/dashboard-frontend", isExternal: true}] },
+  { date: "August 6 (2024) 15:42PM", content: "Update tokenomics", link: [{ name: "Tokenomics", href: "/tokenomics", isExternal: false}] },
+  { date: "August 6 (2024) 08:31PM", content: "Some of the tokens that were not confirmed to the owners in the airdrop will be distributed among those who confirmed their participation.", link: [] },
+  { date: "August 5 (2024) 08:10PM", content: "Acceptance of addresses that are eligible to participate in the airdrop has been ended.", link: [{ name: "https://github.com/aaronetwork/airdrop-data", href: "https://github.com/aaronetwork/airdrop-data", isExternal: true}] },
+  { date: "July 29 (2024) 09:58PM", content: "We have increased the time for confirming participation in the airdrop (last day on August 4).", link: [] },
+  { date: "July 28 (2024) 10:59AM", content: "Confirmation of participation in the airdrop has been completed.", link: [] },
+  { date: "July 25 (2024) 9:57PM", content: "We decided to change the name of the network's native token to AARON", link: [] },
+  { date: "June 26 (2024) 12:31AM", content: "We have fixed the issue that Quokka validator delegates encountered. Now you can check your addresses and confirm your participation in the airdrop :)", link: [] },
+  { date: "June 22 (2024) 01:08AM", content: "There was an error on our part as a result of which the Quokka stakers do not eligible. We will fix this error as soon as possible. We will notify you when the work is completed. Don’t worry, there will be enough time for everyone to confirm the address :)", link: [] },
+];
+---
+
+<section class="py-16">
+  <div class="max-w-3xl mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center mb-8">Latest Updates</h2>
+    <ul class="space-y-8">
+      {updates.map((update) => (
+        <li class="border-l-4 border-primary-500 pl-4">
+          <p class="text-lg font-semibold text-primary-700">{update.date}</p>
+          <p class="text-base text-gray-600 mt-2">{update.content}</p>
+          <p class="text-base text-gray-600 mt-2">
+            {update.link.map((item) => (
+              <p>
+                <a
+                  href={item.href}
+                  class="focus-visible:outline-primary-950 dark:focus-visible:outline-primary-200 inline-flex items-center gap-1 rounded-md text-base hover:underline focus-visible:outline focus-visible:outline-2"
+                  target={item.isExternal ? '_blank' : undefined}
+                  rel={item.isExternal ? 'noopener' : undefined}
+                  style="color: blue"
+                >
+                  {item.name} {item.isExternal && (
+                  <svg
+                    class="h-4 w-4"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path d="M10 6V8H5V19H16V14H18V20C18 20.5523 17.5523 21 17 21H4C3.44772 21 3 20.5523 3 20V7C3 6.44772 3.44772 6 4 6H10ZM21 3V11H19L18.9999 6.413L11.2071 14.2071L9.79289 12.7929L17.5849 5H13V3H21Z" />
+                  </svg>
+                )}
+                </a>
+              </p>
+            ))}
+          </p>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
